@@ -957,7 +957,7 @@ protected:
     void serialize(Item&& item)
     {
         serialize_integral(std::forward<Item>(item),
-            std::bool_constant<endian != detail::getSystemEndianness()>{});
+            std::integral_constant<bool, endian != detail::getSystemEndianness()>{});
     }
 
     /**
@@ -1189,7 +1189,7 @@ protected:
     void serialize(Item&& item)
     {
         serialize_integral(std::forward<Item>(item),
-            std::bool_constant<endian != detail::getSystemEndianness()>{});
+            std::integral_constant<bool, endian != detail::getSystemEndianness()>{});
     }
 
     /**
